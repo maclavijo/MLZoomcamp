@@ -3,10 +3,6 @@
 
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-from IPython.display import display
-import seaborn as sns
-from sklearn import set_config
 from sklearn.pipeline import Pipeline, make_pipeline
 from sklearn.compose import make_column_selector as selector
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
