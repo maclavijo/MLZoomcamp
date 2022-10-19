@@ -1,0 +1,10 @@
+service: "service.py:svc"
+labels:
+  owner: mac-bento
+  project: mlzoomcamp_week7
+include:
+- "*.py"
+python:
+  packages:
+  - xgboost
+  - sklearn
