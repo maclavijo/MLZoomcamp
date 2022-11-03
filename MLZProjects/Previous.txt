@@ -1,7 +1,0 @@
-{
-    "AdaBoostClassifier": 48,
-    "DecisionTreeClassifier": 32,
-    "LogisticRegression": 14,
-    "RandomForestClassifier": 28,
-    "XGBClassifier": 14
-}
