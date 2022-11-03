@@ -5,19 +5,19 @@ import json
 
 def predict(inputdata):
     
-    print('############################')
-    print(inputdata)
-    print('############################')
+    #print('############################')
+    #print(inputdata)
+    #print('############################')
     prevfile = 'Previous.txt'
     with open (prevfile, 'r') as f:
         lines = f.read()
     previous = dict(json.loads(lines))
-    print('**************************')
-
-    print('**************************')
-    print(previous)
-
-    print('**************************')
+    #print('**************************')
+#
+    #print('**************************')
+    #print(previous)
+#
+    #print('**************************')
     #Transform inputdata to an inputdataframe
     data = pd.DataFrame(inputdata, index=[1])
 
@@ -112,7 +112,7 @@ def predict(inputdata):
         yPred_ = model.predict(data)
         #print(f'{name:<22} : {yProbFinal} %')# = {yPred_}')
         results[name] = yProbFinal
-        deltas[name] = int(previous[name]) - yProbFinal
+        deltas[name] = yProbFinal - int(previous[name])
 
     json_object = json.dumps(results, indent=4)
 
