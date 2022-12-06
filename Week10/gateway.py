@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+import os
 import grpc
 import tensorflow as tf
 
@@ -14,7 +15,8 @@ from tensorflow_serving.apis import predict_pb2
 from tensorflow_serving.apis import prediction_service_pb2_grpc
 from keras_image_helper import create_preprocessor
 
-host = 'localhost:8500'
+host = os.getenv('TF_SERVING_HOST', 'localhost:8500')
+
 channel = grpc.insecure_channel(host)#, options=(('grpc.enable_http_proxy', 0),))
 stub = prediction_service_pb2_grpc.PredictionServiceStub(channel)
 preprocessor = create_preprocessor('xception', target_size=(299,299))
